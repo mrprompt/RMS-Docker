@@ -6,14 +6,16 @@ Docker container to run RMS project.
 ## Building
 
 ```console
-docker build -t RMS .
+docker build -t rms .
 ```
 
 ## Running
 
 ```console
-docker run -it --rm --name rms -v /RMS_data:/root/RMS_data RMS
+docker run -d -p 6080:80 --name rms -v /RMS_data:/root/RMS_data -v /dev/shm:/dev/shm rms
 ```
 
-Open VNC to your container IP or access `http://localhost:6079`
+Open VNC to your container IP or access `http://localhost:6080`
+
+
 
